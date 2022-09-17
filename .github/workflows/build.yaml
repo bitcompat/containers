@@ -1,0 +1,22 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    uses: bitcompat/base/.github/workflows/build.yaml@main
+    with:
+      name: main
+      build-args: | # add build-args here
+        SERVER_VERSION=1.0.0
+      image_tag: | # add image tags here
+        latest
+        1.0.0-bullseye-r1 # renovate: datasource=github-releases depName=bitcompat/containers
+        1.0.0-bullseye # renovate: datasource=github-releases depName=bitcompat/containers
+        1.0.0 # renovate: datasource=github-releases depName=bitcompat/containers
+        1.0
+        1
+    secrets: inherit

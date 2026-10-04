@@ -12,11 +12,7 @@ jobs:
       name: main
       build-args: | # add build-args here
         SERVER_VERSION=1.0.0
-      image_tag: | # add image tags here
-        latest
-        1.0.0-bullseye-r1 # renovate: datasource=github-releases depName=bitcompat/containers
-        1.0.0-bullseye # renovate: datasource=github-releases depName=bitcompat/containers
-        1.0.0 # renovate: datasource=github-releases depName=bitcompat/containers
-        1.0
-        1
+      version: 1.0.0 # renovate: datasource=github-releases depName=bitcompat/containers
+      latest: true
+      debian_codename: trixie
     secrets: inherit
